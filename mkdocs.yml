@@ -1,0 +1,151 @@
+# Website information
+site_name: 中文 Duckling
+site_url: https://duckling.leovan.tech
+site_author: 范叶亮 | Leo Van
+site_description: Duckling Chinese | 中文 Duckling
+
+# Repository
+repo_name: leovan/duckling-chinese
+repo_url: https://github.com/leovan/duckling-chinese
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: <a href="https://leovan.me" target="_blank">范叶亮 | Leo Van</a>
+
+# Navigation
+nav:
+  - 主页: index.md
+  - 接口: api.md
+  - 维度:
+      - dimension/index.md
+      - 演出: dimension/act.md
+      - 年龄: dimension/age.md
+      - 面积: dimension/area.md
+      - 血型: dimension/blood-type.md
+      - 星座: dimension/constellation.md
+      - 货币: dimension/currency.md
+      - 日期: dimension/date.md
+      - 数字序列: dimension/digit-sequence.md
+      - 距离: dimension/distance.md
+      - 重复: dimension/duplicate.md
+      - 持续时间: dimension/duration.md
+      - 集数: dimension/episode.md
+      - 分数: dimension/fraction.md
+      - 性别: dimension/gender.md
+      - 等级: dimension/level.md
+      - 歌词: dimension/lyric.md
+      - 多位字符: dimension/multi-char.md
+      - 倍数: dimension/multiple.md
+      - 数值: dimension/numeral.md
+      - 序数: dimension/ordinal.md
+      - 手机号: dimension/phone-number.md
+      - 位置: dimension/place.md
+      - 数量: dimension/quantity.md
+      - 评分: dimension/rating.md
+      - 重复: dimension/repeat.md
+      - 季数: dimension/season.md
+      - 温度: dimension/temperature.md
+      - 时间: dimension/time.md
+      - URL: dimension/url.md
+      - 速度: dimension/velocity.md
+  - 排序:
+      - ranker/index.md
+      - 朴素贝叶斯: ranker/naive-bayes.md
+
+# Theme
+theme:
+  name: material
+  include_search_page: false
+  search_index_only: true
+  language: zh
+  features:
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - tabs
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: 暗黑
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/white-balance-sunny
+        name: 明亮
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/logo.png
+  logo: images/logo.png
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+
+# Extra
+extra:
+  social:
+    - icon: material/home
+      link: https://leovan.me
+      name: 个人主页
+    - icon: material/github
+      link: https://github.com/leovan
+      name: Github
+  analytics:
+    provider: google
+    property: G-RS00KBSHXE
+extra_css:
+  - css/table.css
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: leovan
+      repo: duckling-chinese
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

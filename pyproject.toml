@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "duckling_chinese"
+authors = [
+    {name = "范叶亮", email = "leo-van@hotmail.com"}
+]
+description = "Ducking Chinese"
+readme = "README.md"
+requires-python = ">=3.6"
+keywords = ["duckling", "chinese", "nlp"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Unix",
+    "Programming Language :: Java",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering"
+]
+dependencies = [
+    "Jpype1",
+    "backports.zoneinfo; python_version<'3.9'"
+]
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/leovan/duckling-chinese"
+documentation = "https://duckling.leovan.tech"
+
+[tool.setuptools.dynamic]
+version = {attr = "duckling_chinese.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"duckling_chinese" = ["jars/*.jar"]
