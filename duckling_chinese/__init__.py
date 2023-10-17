@@ -47,7 +47,7 @@ from java.time import ZonedDateTime as JavaZonedDateTime
 from java.time import ZoneId as JavaZoneId
 from java.time import ZoneOffset as JavaZoneOffset
 from java.util import Locale as JavaLocale
-from scala import Some as JavaScaleSome
+from scala import Some as JavaScalaSome
 from scala.collection.mutable import HashSet as JavaScalaHashSet
 from org.json4s.jackson import Serialization as JavaJsonSerialization
 
@@ -113,7 +113,7 @@ class Duckling(object):
     ) -> JavaDucklingTypes.RankOptions:
         rank_options_java = JavaDucklingTypes.RankOptions()
         rank_options_java.setWinnerOnly(winner_only)
-        rank_options_java.setRanker(JavaScaleSome(ranker.value))
+        rank_options_java.setRanker(JavaScalaSome(ranker.value))
         rank_options_java.setCombinationRank(combination_rank)
         rank_options_java.setRangeRankAhead(range_rank_ahead)
         rank_options_java.setNodesLimit(nodes_limit)
