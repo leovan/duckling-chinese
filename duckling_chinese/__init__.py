@@ -19,7 +19,11 @@ except ImportError:
 def _start_jvm():
     jvm_options = [
         '-Xms128m',
-        '-Xmx2048m'
+        '-Xmx2048m',
+        '--illegal-access=permit',
+        '--add-opens=java.base/java.lang=ALL-UNNAMED',
+        '--add-opens=java.base/java.util=ALL-UNNAMED',
+        '--add-opens=java.base/java.util.regex=ALL-UNNAMED'
     ]
 
     jars_dir = Path(os.path.dirname(__file__)) / 'jars'
@@ -43,6 +47,7 @@ from duckling_chinese.dimension import *
 from duckling_chinese.ranker import *
 from duckling_chinese.utils import *
 
+from java.lang import Thread as JavaThread
 from java.time import ZonedDateTime as JavaZonedDateTime
 from java.time import ZoneId as JavaZoneId
 from java.time import ZoneOffset as JavaZoneOffset
@@ -53,8 +58,6 @@ from org.json4s.jackson import Serialization as JavaJsonSerialization
 
 from com.xiaomi.duckling import Api as JavaDucklingApi
 from com.xiaomi.duckling import Types as JavaDucklingTypes
-from com.xiaomi.duckling.dimension import EnumeratedDimension \
-    as JavaDucklingEnumeratedDimension
 from com.xiaomi.duckling.dimension.time import TimeOptions \
     as JavaDucklingTimeOptions
 from com.xiaomi.duckling.dimension.numeral import NumeralOptions \
@@ -70,8 +73,8 @@ class Duckling(object):
 
         try:
             if threading.active_count() > 1:
-                if not jpype.isThreadAttachedToJVM():
-                    jpype.attachThreadToJVM()
+                if not JavaThread.isAttached():
+                    JavaThread.attach()
             self._lock.acquire()
             self._api = JavaDucklingApi
         finally:
@@ -211,7 +214,8 @@ class Duckling(object):
             self,
             text: Text,
             context: JavaDucklingTypes.Context = None,
-            options: JavaDucklingTypes.Options = None
+            options: JavaDucklingTypes.Options = None,
+            remove_duplicate=True
     ) -> List[Dict[Text, Any]]:
         if context is None:
             context = self.gen_context()
@@ -219,7 +223,11 @@ class Duckling(object):
         if options is None:
             options = self.gen_options()
 
-        answers_java = self._api.analyzeJ(text, context, options)
+        answers_java = self._api.analyze(text, context, options)
+
+        if remove_duplicate:
+            answers_java = answers_java.distinct()
+
         answers_json = JavaJsonSerialization.write(
             answers_java,
             JavaDucklingJsonSerde.formats()
@@ -231,7 +239,8 @@ class Duckling(object):
             self,
             text: Text,
             context: JavaDucklingTypes.Context = None,
-            options: JavaDucklingTypes.Options = None
+            options: JavaDucklingTypes.Options = None,
+            remove_duplicate=True
     ) -> List[Dict[Text, Any]]:
         if context is None:
             context = self.gen_context()
@@ -240,6 +249,10 @@ class Duckling(object):
             options = self.gen_options()
 
         entities_java = self._api.parseEntities(text, context, options)
+
+        if remove_duplicate:
+            entities_java = entities_java.distinct()
+
         entities_json = JavaJsonSerialization.write(
             entities_java,
             JavaDucklingJsonSerde.formats()
@@ -256,4 +269,4 @@ __all__ = [
 ]
 
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'

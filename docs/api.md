@@ -17,9 +17,10 @@ duckling = Duckling()
 ```python
 def analyze(
     self,
-    text: str,
-    context=None,
-    options=None
+    text: Text,
+    context: JavaDucklingTypes.Context = None,
+    options: JavaDucklingTypes.Options = None,
+    remove_duplicate=True
 ) -> List[Dict[Text, Any]]
 ```
 
@@ -32,7 +33,8 @@ def parse_entities(
     self,
     text: Text,
     context: JavaDucklingTypes.Context = None,
-    options: JavaDucklingTypes.Options = None
+    options: JavaDucklingTypes.Options = None,
+    remove_duplicate=True
 ) -> List[Dict[Text, Any]]
 ```
 
@@ -54,11 +56,12 @@ def lunar_to_solar(lunar_datetime: Text)
 
 参数列表如下：
 
-| 参数    | 类型                                | 默认值 | 说明       |
-| ------- | ----------------------------------- | ------ | ---------- |
-| text    | `str`                               |        | 待解析文本 |
-| context | `com.xiaomi.duckling.Types.Context` | `None` | 解析上下文 |
-| options | `com.xiaomi.duckling.Types.Options` | `None` | 解析选项   |
+| 参数             | 类型                                | 默认值 | 说明             |
+| ---------------- | ----------------------------------- | ------ | ---------------- |
+| text             | `str`                               |        | 待解析文本       |
+| context          | `com.xiaomi.duckling.Types.Context` | `None` | 解析上下文       |
+| options          | `com.xiaomi.duckling.Types.Options` | `None` | 解析选项         |
+| remove_duplicate | `bool`                              | `True` | 是否删除重复结果 |
 
 ### `context`
 

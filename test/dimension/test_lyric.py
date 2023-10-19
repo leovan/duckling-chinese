@@ -76,7 +76,7 @@ class LyricTestCase(unittest.TestCase):
             text, self._default_context, options)
 
         print(json.dumps(entities, indent=2, ensure_ascii=False))
-        self.assertEqual(2, len(entities))
+        self.assertEqual(1, len(entities))
         self.assertEqual('编曲:墨辞  词: 刀郎 曲 周杰伦', entities[0]['body'])
         self.assertEqual('Lyric', entities[0]['dim'])
         self.assertEqual(0, entities[0]['start'])
