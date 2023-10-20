@@ -20,6 +20,7 @@ def _start_jvm():
     jvm_options = [
         '-Xms128m',
         '-Xmx2048m',
+        '-XX:+IgnoreUnrecognizedVMOptions',
         '--illegal-access=permit',
         '--add-opens=java.base/java.lang=ALL-UNNAMED',
         '--add-opens=java.base/java.util=ALL-UNNAMED',
@@ -269,4 +270,4 @@ __all__ = [
 ]
 
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
