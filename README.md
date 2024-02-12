@@ -1,4 +1,4 @@
-# 中文 Duckling <img src="https://raw.githubusercontent.com/leovan/duckling-chinese/main/docs/images/logo.png" align="right" alt="logo" width="100" height="100" style="border: none; float: right;">
+# 中文 Duckling <img src="https://raw.githubusercontent.com/leovan/duckling-chinese/main/docs/images/logo.png" align="right" alt="logo" height="100" style="border: none; float: right; height: 100px;" />
 ![Version](https://img.shields.io/pypi/v/duckling-chinese)
 ![Python Versions](https://img.shields.io/pypi/pyversions/duckling-chinese)
 ![License](https://img.shields.io/pypi/l/duckling-chinese)
@@ -29,3 +29,5 @@ Scala 中文版本：[duckling-fork-chinese](https://github.com/XiaoMi/MiNLP/tre
 ## 许可
 
 The MIT License (MIT)
+
+版权所有 &copy; 2023-2024，<a href="https://leovan.me" target="_blank">范叶亮 | Leo Van</a>
