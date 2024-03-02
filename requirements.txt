@@ -1,3 +1,3 @@
 Jpype1
 backports.zoneinfo; python_version<'3.9'
-mkdocs-material==9.4.6
+mkdocs-material

@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/leovan/duckling-chinese/compare/v1.1.0...v1.1.1) (2024-03-01)
+
+Duckling Core 版本：[1.5.6](https://mvnrepository.com/artifact/com.xiaomi.duckling/duckling-core_2.13/1.5.6)
+
+### 修复
+
+- 修复测试工具函数 `has_same_value`，忽略原始值和原始单位。
+
 ## [1.1.1](https://github.com/leovan/duckling-chinese/compare/v1.1.0...v1.1.1) (2023-10-20)
 
 Duckling Core 版本：[1.5.3](https://mvnrepository.com/artifact/com.xiaomi.duckling/duckling-core_2.13/1.5.3)

@@ -7,13 +7,13 @@
     <groupId>tech.leovan</groupId>
     <artifactId>duckling-chinese</artifactId>
     <packaging>jar</packaging>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
 
     <dependencies>
         <dependency>
             <groupId>com.xiaomi.duckling</groupId>
             <artifactId>duckling-core_2.13</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.6</version>
         </dependency>
     </dependencies>
 </project>
