@@ -1,6 +1,7 @@
 # 中文 Duckling <img src="https://raw.githubusercontent.com/leovan/duckling-chinese/main/docs/images/logo.png" align="right" alt="logo" height="100" style="border: none; float: right; height: 100px;" />
 ![Version](https://img.shields.io/pypi/v/duckling-chinese)
 ![Python Versions](https://img.shields.io/pypi/pyversions/duckling-chinese)
+![Duckling Core](https://img.shields.io/badge/Duckling_Core-1.6.3.2-blue)
 ![License](https://img.shields.io/pypi/l/duckling-chinese)
 ![Downloads](https://img.shields.io/pypi/dm/duckling-chinese)
 
