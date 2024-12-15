@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.6](https://github.com/leovan/duckling-chinese/compare/v1.1.6...v1.1.6) (2024-12-15)
+
+Duckling Core 版本：[1.6.4](https://mvnrepository.com/artifact/com.xiaomi.duckling/duckling-core_2.13/1.6.4)
+
 ## [1.1.5](https://github.com/leovan/duckling-chinese/compare/v1.1.4...v1.1.5) (2024-08-31)
 
 Duckling Core 版本：[1.6.3.2](https://mvnrepository.com/artifact/com.xiaomi.duckling/duckling-core_2.13/1.6.3.2)
