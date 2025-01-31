@@ -40,6 +40,7 @@ version = {attr = "duckling_chinese.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["."]
+exclude = ["tests*"]
 
 [tool.setuptools.package-data]
 "duckling_chinese" = ["jars/*.jar"]
