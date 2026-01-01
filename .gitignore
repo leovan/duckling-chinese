@@ -33,5 +33,12 @@ MANIFEST
 # VSCode
 .vscode/
 
+# Docs
+site
+
+# Others
+.cache
+.ruff_cache/
+
 # Custom
 *.jar
